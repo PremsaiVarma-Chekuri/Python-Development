@@ -42,4 +42,25 @@ gro = groceryItem("Chocolate",2000,1800,4.8)
 gro.set_expiry_date(12)
 gro.display_grocery_items()
 
+## Added Order class
+
+class Order:
+    def __init__(self,delivery_type,delivery_address):
+        self.items = []
+        self.delivery_type = delivery_type
+        self.delivery_address = delivery_address
+    def add_item(self,name,quantity):
+        self.items.append(name,quantity)
+    def display_items(self):
+        for name, quantity in items:
+            name.display_product_details()
+            print("Quantity: {}".format(self.quantity))
+milk = groceryItem("Milk",80,75,4.7)
+laptop = electronicItem("Laptop",80000,72000,4.5)
+
+add = Order("Prime","Visakhapatnam")
+add.add_item(milk,4)
+add.add_item(laptop,1)
+add.display_items()
+
 
