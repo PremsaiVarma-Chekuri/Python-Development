@@ -50,11 +50,11 @@ class Order:
         self.delivery_type = delivery_type
         self.delivery_address = delivery_address
     def add_item(self,name,quantity):
-        self.items.append(name,quantity)
+        self.items.append((name,quantity))
     def display_items(self):
-        for name, quantity in items:
+        for name, quantity in self.items:
             name.display_product_details()
-            print("Quantity: {}".format(self.quantity))
+            print("Quantity: {}".format(quantity))
 milk = groceryItem("Milk",80,75,4.7)
 laptop = electronicItem("Laptop",80000,72000,4.5)
 
