@@ -12,6 +12,8 @@ class Product:
         print("Deal Price: {}".format(self.deal_price))
         print("You saved: {}".format(self.you_save))
         print("Ratings: {}".format(self.ratings))
+    def get_deal_price(self):
+        return self.deal_price
 product = Product("ASUS Laptop",90000,75000,4.7)
 product.display_product_details()
 
@@ -55,6 +57,16 @@ class Order:
         for name, quantity in self.items:
             name.display_product_details()
             print("Quantity: {}".format(quantity))
+    def display_order_bill(self):
+        bill = 0
+        for product, quantity in self.items:
+            price = product.get_deal_price()*quantity
+            bill+=price
+        print("The total bill is: {}".format(bill))
+            
+
+
+
 milk = groceryItem("Milk",80,75,4.7)
 laptop = electronicItem("Laptop",80000,72000,4.5)
 
@@ -62,5 +74,6 @@ add = Order("Prime","Visakhapatnam")
 add.add_item(milk,4)
 add.add_item(laptop,1)
 add.display_items()
+add.display_order_bill()
 
 
