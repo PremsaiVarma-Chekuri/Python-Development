@@ -37,17 +37,21 @@ class Order:
     }
     def __init__(self,delivery_type,location):
         self.items = []
-        self.delivery_tyoe = delivery_type
+        self.delivery_type = delivery_type
         self.location = location
     def add_items(self,product,quantity):
         self.items.append((product,quantity))
+    def delivery(cls):
+        return cls.delivery_charges()
     def display_order_details(self):
         print("-----------------Product---------------------")
         for product,quantity in self.items:
             product.display_product_details()
             print("Quantity: {}".format(quantity))
             print("-----------------")
-
+        print("Delivery type: {}".format(self.delivery_type))
+        print("Location: {}".format(self.location))
+        print("Delivery charge: {}".format(Order.delivery_charges[self.delivery_type]))
 
 
 tv = electronicItem("TV",40000,35000,4.7,12)
@@ -55,7 +59,7 @@ keyboard = electronicItem("Logitach Keyboard",10000,5000,4.5,12)
 mouse = electronicItem("Logitach Mouse",5000,4000,4,12)
 milk = groceryItem("Milk",80,75,5,"10 days")
 flour = groceryItem("Flour",150,120,4.5,"1 year")
-order = Order("prime","Hyderabad")
+order = Order("prime_member","Hyderabad")
 order.add_items(tv,1)
 order.add_items(keyboard,5)
 order.add_items(mouse,9)
