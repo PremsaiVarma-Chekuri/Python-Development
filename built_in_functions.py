@@ -16,6 +16,10 @@ a = [1,-2,-9,5]
 pos_num = filter(is_positive,a)
 print(list(pos_num))
 
+st = ["apple","beetroot","carrot"]
+st = list(map(str.upper,st))
+print(st)
+
 # reduce function
 from functools import reduce
 def sum_of_num(n1,n2):
