@@ -9,7 +9,7 @@ class Bank:
     def withdraw(self,amount):
         if self.balance>=amount:
             self.balance-=amount
-        else:
+        else:   
             print("Insufficient balance")
     def deposit(self,amount):
         self.balance+=amount
