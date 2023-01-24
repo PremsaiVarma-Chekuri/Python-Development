@@ -1,9 +1,10 @@
 x = "GLobal variable"
+def foo_bar():
+    print(9)
 
 def foo():
-    global x
-    x = "Local Variable"
+    foo_bar()
     print(x)
-print(x)
+#print(x)
 foo()
 print(x)
